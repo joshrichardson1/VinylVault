@@ -6,17 +6,17 @@ import AllEvents from '../components/AllEvents/AllEvents';
 
 const AllEventsPage = (props) => {
 
+  // state
   const [allEvents, setAllEvents] = useState([]);
-  const [allArtist, setAllArtist] = useState([]);
   const user = JSON.parse(window.localStorage.getItem("user"));
 
+  // retrieves all events for all artist 
   const getAllEvents = async (artistArray) => {
     let eventsArr = [];
     const data = await Promise.all(
       artistArray.map(async (artist) => {
         const res = await BitAPI(artist);
         if (res.length > 0) {
-          let currentArtist = res[0].lineup[0];
           eventsArr.push(res);
         }
       })
@@ -35,7 +35,6 @@ const AllEventsPage = (props) => {
           artists.push(vinyl.artist);
         });
         let artistSet = [...new Set(artists)];
-        setAllArtist(artistSet);
         getAllEvents(artistSet);   
       };
     };
@@ -44,7 +43,7 @@ const AllEventsPage = (props) => {
  
   return (
     <div>
-      <h3>AllEventsPage</h3>
+      <h3 id="allEventsHeader" className="p-5">All Upcoming Events</h3>
       <AllEvents allEvents={allEvents} />
     </div>
     

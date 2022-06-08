@@ -1,23 +1,51 @@
-#loadingScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#allEventsMain {
+      background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
+}
+
+#allEventsHeader {
+  background-image: url("https://img.wallpapersafari.com/desktop/1600/900/68/87/g795eu.jpg");
+  color: white;
+}
+
+#allEventsArtist {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  width: 30%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+#cardListBody {
+  background-color: rgb(0, 0, 0, 0.85);
+  color: white;
 }
 
 #collectionHeader {
-  background-image: url("https://www.commoncentsmom.com/wp-content/uploads/2020/08/vinyl-record-storage-ideas.jpeg"); 
+  background-image: url("https://www.commoncentsmom.com/wp-content/uploads/2020/08/vinyl-record-storage-ideas.jpeg");
   background-size: cover;
-};
+}
 
 #collectionLabel {
   background-color: white;
+}
+
+#createAccountMain {
+  background-image: url("https://www.talissadecor.com/wp-content/uploads/2019/03/1752_Bank-Vault-Steel-Door_Porte-en-Acier-de-Vo%C3%BBte-de-Banque.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+#createAccountForm {
+  background-color: rgb(0, 0, 0, 0.55);
+}
+
+#createAccountHeader {
+  color: white
 }
 
 #detailHeader {
@@ -25,24 +53,12 @@
   color: white
 }
 
-#eventPageHeader {
-  background-image: url("https://img.wallpapersafari.com/desktop/1600/900/68/87/g795eu.jpg");
-  color: white
-}
-
-#vinylListBody {
+#displaySearchMain {
   background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
 }
 
-#searchInfo {
-  background-color: rgb(187, 184, 184);
-  margin-left: 42%;
-  margin-right: 42%;
-  font-weight: 500;
-}
-
-#searchHeader {
-  background-image: url("https://img.wallpapersafari.com/desktop/1600/900/68/87/g795eu.jpg");
+.displaySearchCard {
+  background-color: rgba(0, 0, 0, 0.63);
   color: white;
 }
 
@@ -56,19 +72,26 @@
   border-style: solid
 }
 
-#cardListBody {
-  background-color: rgb(0, 0, 0, 0.83);
-  color: white;
-}
-
-#vinylDetailBody{
-  background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
-  /* background-color: rgb(187, 184, 184); */
-
-}
-
 #eventDetailBody {
   scroll-padding-top: 100px;
+}
+
+#eventPageHeader {
+  background-image: url("https://img.wallpapersafari.com/desktop/1600/900/68/87/g795eu.jpg");
+  color: white
+}
+
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #loginMain {
@@ -79,34 +102,29 @@
 }
 
 #loginMenu {
-  background-color: rgb(0, 0, 0, 0.83);
+  background-color: rgb(0, 0, 0, 0.65);
   color: white;
-}
-
-#vinylDetailButtons{
-  background-color: rgb(0, 0, 0, 0.7);
-}
-
-#trackListCard {
-  background-color: rgba(0, 0, 0, 0.58);
-  color: white;
-  margin-left: 10%;
-  margin-right: -10%;
-}
-
-#trackListHeader {
-  margin-left: 10%;
-  margin-right: -10%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 #loginForm {
-  background-color: rgb(0, 0, 0, 0.83);
+  background-color: rgb(0, 0, 0, 0.65);
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 #loginFormFields {
   width: 100%;
   display: flex;
   justify-content: center
+}
+
+.navbar {
+  background-color: rgb(244, 243, 243);
+  width: 100vw;
 }
 
 #noTrackList {
@@ -126,27 +144,46 @@
   height: 100vh;
 }
 
-#displaySearchMain {
-    background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
+#searchForm {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
-.displaySearchCard {
+#searchInfo {
+  background-color: rgb(187, 184, 184);
+  margin-left: 42%;
+  margin-right: 42%;
+  font-weight: 500;
+}
+
+#searchHeader {
+  background-image: url("https://img.wallpapersafari.com/desktop/1600/900/68/87/g795eu.jpg");
+  color: white;
+}
+
+#trackListCard {
   background-color: rgba(0, 0, 0, 0.58);
   color: white;
-
+  margin-left: 10%;
+  margin-right: -10%;
 }
 
-#createAccountMain {
-    background-image: url("https://www.talissadecor.com/wp-content/uploads/2019/03/1752_Bank-Vault-Steel-Door_Porte-en-Acier-de-Vo%C3%BBte-de-Banque.jpg");
-      height: 100vh;
-      width: 100vw;
-      background-size: cover;
+#trackListHeader {
+  margin-left: 10%;
+  margin-right: -10%;
 }
 
-#createAccountForm {
-  background-color: rgb(0, 0, 0, 0.83);
+#vinylDetailButtons {
+  background-color: rgb(0, 0, 0, 0.7);
 }
 
-#createAccountHeader {
-  color: white
+#vinylListBody {
+  background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
+}
+
+#vinylDetailBody {
+  background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
+  /* background-color: rgb(187, 184, 184); */
+
 }

@@ -22,8 +22,7 @@ const LoginPage = () => {
   return (
     <div className="pb-4" id="loginFormFields">
       <Form onSubmit={handleSumbit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+        <Form.Group className="mb-3">
           <Form.Control
             id="emalFormField"
             style={{ width: "30rem" }}
@@ -32,8 +31,7 @@ const LoginPage = () => {
             name="email"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+        <Form.Group className="mb-3">
           <Form.Control
             id="pwFormFields"
             style={{ width: "30rem" }}

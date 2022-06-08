@@ -4,6 +4,7 @@ import DiscogsAPI from '../api/DiscogsAPI'
 
 const AddVinylPage = () => {
 
+  // retrieves search results from Discogs API
   const handleSearch = async (event) => {
     event.preventDefault()
     let artist = event.target.artist.value;

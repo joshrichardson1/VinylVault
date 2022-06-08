@@ -4,19 +4,19 @@ import { useNavigate } from 'react-router-dom';
 import VinylCarousel from '../VinylCarousel/VinylCarousel';
 import "../../styles/styles.css";
 
-
 const VinylList = (props) => {
 
+  const { vinyls, view } = props;
   const navigate = useNavigate();
 
-  const { vinyls, view } = props;
-
+  // handles delete vinyl
   const handleDelete = async (event) => {
       let vinylId = event.target.id;
       await VinylAPI.deleteVinyl(vinylId);
       window.location.reload();
     };
 
+  // retrieves vinyl info and returns data in card
   const getVinylsList = (vinyls) => {
     return vinyls.map((vinyl, index) => {
       return (
@@ -27,7 +27,7 @@ const VinylList = (props) => {
             className="m-5"
           >
             <Card.Img variant="top" src={vinyl.image} style={{height: "25rem" }}/>
-            <Card.Body id="cardListBody">
+            <Card.Body id="cardListBody" className="pt-4">
               <Card.Title>{vinyl.artist}</Card.Title>
               <Card.Text>{vinyl.album}</Card.Text>
               <Button

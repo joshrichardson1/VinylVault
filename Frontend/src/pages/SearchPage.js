@@ -4,6 +4,7 @@ import DiscogsAPI from '../api/DiscogsAPI'
 import DisplaySearch from '../components/DisplaySearch/DisplaySearch'
 
 const SearchPage = () => {
+  
   const [results, setResults] = useState([]);
   const { artist, album } = useParams();
 

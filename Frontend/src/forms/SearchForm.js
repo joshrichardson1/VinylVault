@@ -17,20 +17,22 @@ const SearchForm = (props) => {
     <div>
       <p id="searchInfo"><i>Please enter an Artist <b>AND</b> Album title to search:</i></p>
       <Form onSubmit={navigateSearch}>
-        <Row className="mb-3">
-          <Form.Group as={Col} className="mb-3" controlId="artist">
-            <Form.Control type="text" placeholder="Artist" name="artist" required/>
-          </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="album">
-            <Form.Control
-              size="small"
-              type="text"
-              placeholder="Album"
-              name="album"
-              required
-            />
-          </Form.Group>
-        </Row>
+        <div id="searchForm">
+          <Row className="mb-3">
+            <Form.Group as={Col} className="mb-3" controlId="artist">
+              <Form.Control type="text" placeholder="Artist" name="artist" required/>
+            </Form.Group>
+            <Form.Group as={Col} className="mb-3" controlId="album">
+              <Form.Control
+                size="small"
+                type="text"
+                placeholder="Album"
+                name="album"
+                required
+              />
+            </Form.Group>
+            </Row>
+          </div>
         <Button variant="danger" type="submit" className="mx-2" onClick={() => props.setShowSearch(false)}>
           Cancel
         </Button>

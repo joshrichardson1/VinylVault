@@ -1,31 +1,18 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
-import BitAPI from '../../api/BitAPI';
 import { Carousel, CarouselItem, Row, Col, Button } from 'react-bootstrap';
 
 const VinylCarousel = (props) => {
 
+  // state
   const [activeVinyl, setActiveVinyl] = useState(props.vinyls[0]);
-  const [events, setEvents] = useState();
   const [showEvents, setShowEvents] = useState(false);
 
-  const handleSelect = (selectedVinyl, event) => {
+  // sets active vinyl
+  const handleSelect = (selectedVinyl) => {
     setActiveVinyl(props.vinyls[selectedVinyl]);
   }
-
-  useEffect(() => { 
-    setShowEvents(false);
-    const getEvents = async () => {
-      const data = await BitAPI(activeVinyl.artist);
-      if (data) {
-        setEvents(data);
-      } else {
-        setEvents([]);
-      }
-    };
-    getEvents();
-  }, [activeVinyl]);
 
   return (
     <div id="carouselMain">

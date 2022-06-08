@@ -10,7 +10,7 @@ const WelcomePage = () => {
 
   return (
     <div id="loginMain">
-      <div id="loginMenu">
+      <div id="loginMenu" className="pt-3 pb-3">
         <h2>Welcome to VinylVault!</h2>
         <p>Please login or create an account to start spinning!</p>
         <hr />

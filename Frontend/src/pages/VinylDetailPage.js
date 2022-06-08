@@ -7,16 +7,14 @@ import UpcomingEvents from '../components/UpcomingEvents/UpcomingEvents';
 import Loading from '../components/Loading/Loading';
 
 
-const VinylDetailPage = (props) => {
+const VinylDetailPage = () => {
 
   const [vinylDetails, setVinylDetails] = useState({});
-  const [events, setEvents] = useState([]);
   const [showEvents, setShowEvents] = useState(false);
   const [trackList, setTracklist] = useState();
-  const { artist, album, vinylID } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const { artist, album, vinylID } = useParams();
   const navigate = useNavigate();
-  const showOrClose = showEvents ? 'Close Upcoming Events' : 'View Upcoming Events'; 
  
   useEffect(() => {
     setTimeout(() => {
@@ -33,9 +31,7 @@ const VinylDetailPage = (props) => {
         const data = await LastFmAPI(artist, album);
         if (data.album.tracks) {
           setTracklist(data);
-        } else {
-          console.log('no data')
-        }
+        } 
       }
     };
     getVinylDetails();
@@ -44,7 +40,7 @@ const VinylDetailPage = (props) => {
 
   const displayTracks = () => {
     if (trackList) {
-      return trackList.album.tracks.track.map((track, index) => (
+      return trackList.album.tracks.track.map((track) => (
         <ListGroupItem key={track.id} id="trackListCard" className="">{track.name}</ListGroupItem>
       ));
     } else {

@@ -6,14 +6,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {useState} from 'react'
 
-// components
+// pages
 import VinylPage from './pages/VinylPage.js'
 import CreateAccountPage from './pages/CreateAccountPage';
 import LoginPage from './pages/LoginPage';
 import WelcomePage from './pages/WelcomePage'
 import AppNav from './components/AppNav/AppNav';
 import MyCollectionPage from './pages/MyCollectionPage';
-import TestPage from './pages/TestPage'
 import SearchPage from './pages/SearchPage';
 import VinylDetailPage from './pages/VinylDetailPage';
 import AllEventsPage from './pages/AllEventsPage';
@@ -21,7 +20,7 @@ import AllEventsPage from './pages/AllEventsPage';
 
 const App = () => {
   
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   return (
     <div className="App">
@@ -29,7 +28,6 @@ const App = () => {
         <AppNav user={user} setUser={setUser}/> 
           <Routes>
           <Route path="/" element={<WelcomePage setUser={setUser}/>} />
-            <Route path="/test/" element={<TestPage user={user} />} />
             <Route path="/vinyls/:vinylID/" element={<VinylPage user={user}/>} />
             <Route path="/create-account/" element={<CreateAccountPage />} />
             <Route path="/login/" element={<LoginPage setUser={setUser}/>} />

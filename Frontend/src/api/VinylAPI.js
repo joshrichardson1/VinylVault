@@ -4,6 +4,7 @@ const ADD_VINYL_API = "http://127.0.0.1:8000/add-vinyl/";
 const DELETE_VINYL_API = "http://127.0.0.1:8000/delete-vinyl/";
 const VINYL_DETAILS_API = "http://127.0.0.1:8000/detail/";
 
+// base function for fetching data from the server
 const tryCatchFetch = async (url, init = null) => {
   try {
     const response = await fetch(url, init);
@@ -21,6 +22,7 @@ const tryCatchFetch = async (url, init = null) => {
   }
 };
 
+// fetch user vinyls
 const fetchVinyls = async (email) => {
     if (email) {
         return await tryCatchFetch(`${BASE_URL}?email=${email}`);
@@ -29,6 +31,7 @@ const fetchVinyls = async (email) => {
     };
 };
 
+// fetch user
 const fetchUser = async (email = null) => {
   if (email) {
     return await tryCatchFetch(`${LOGIN_API}?email=${email}`);
@@ -36,6 +39,7 @@ const fetchUser = async (email = null) => {
   return await tryCatchFetch(LOGIN_API);
 };
 
+// creates new user
 const addUser = async (userData) => {
   try {
     let res = await fetch(LOGIN_API, {
@@ -52,6 +56,7 @@ const addUser = async (userData) => {
   }
 };
 
+// creates new vinyl
 const addVinyl = async (user, vinylData) => {
   try {
     let res = await fetch(`${ADD_VINYL_API}${user}`, {
@@ -61,23 +66,21 @@ const addVinyl = async (user, vinylData) => {
       },
       body: JSON.stringify(vinylData),
     });
-    console.log(res);
-    console.log(JSON.stringify(vinylData));
     let data = await res.json();
-    console.log(1, data);
     return data;
   } catch (e) {
     console.log(e)
   };
 };
 
+// fetch vinyl details
 const getVinylDetails = async (vinylID) => {
   let res = await fetch(`${VINYL_DETAILS_API}${vinylID}`);
   let data = await res.json();
   return data;
 }
 
-
+// deletes vinyl
 const deleteVinyl = async (vinyl_id) => {
   try {
     let res = await fetch(`${DELETE_VINYL_API}${vinyl_id}`, {

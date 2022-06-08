@@ -3,14 +3,15 @@ import VinylAPI from '../../api/VinylAPI';
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, ListGroup, ListGroupItem, Button, Container, Col, Row } from 'react-bootstrap'
 
-
 const DisplaySearch = (props) => {
+
+  //  props and params
   const results = props.results;
   const { artist, album } = useParams();
   const user = JSON.parse(window.localStorage.getItem("user"));
   const navigate = useNavigate();
-  console.log(results)
 
+  // updates artist and album to title case
   const titleCase = (str) => {
     let splitStr = str.toLowerCase().split(" ");
     for (let i = 0; i < splitStr.length; i++) {
@@ -20,6 +21,7 @@ const DisplaySearch = (props) => {
     return splitStr.join(" ");
   };
 
+  // retrieves search results and displays in cards
   const getResults = (results) => {
     return results.map((vinyl, index) => {
       const vinylData = {

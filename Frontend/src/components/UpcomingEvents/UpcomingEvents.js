@@ -8,9 +8,11 @@ import Loading from '../Loading/Loading';
 
 const UpcomingEvents = (props) => {
 
+  // state
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // fetches events from API
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -24,6 +26,7 @@ const UpcomingEvents = (props) => {
     getEvents();
   }, [props.artist]);
 
+  // navigates back to vinyls
   const handleBackToVinyls = () => {
     props.setShowEvents(false);
     window.scrollTo(0, 0);
@@ -47,7 +50,7 @@ const UpcomingEvents = (props) => {
           <hr />
           {events[0] && 
           <Container>
-            <Row xs={2} md={4}>
+            <Row xs={1} md={2} lg={3} xl={4}>
               {events.map((event, index) => (
                 <Col key={index}>
                   <Card
