@@ -23,7 +23,7 @@ const CreateAccountPage = () => {
         Account created successfully! Welcome!
       </Alert>;
       setTimeout(() => {
-        navigate("/login/");
+        navigate("/");
       }, 3000);
       console.log(res);
     }

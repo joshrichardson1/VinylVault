@@ -20,18 +20,19 @@ const VinylList = (props) => {
   const getVinylsList = (vinyls) => {
     return vinyls.map((vinyl, index) => {
       return (
-        <Col key={index} id="vinylListCardMain">
+        <Col key={index} id="vinylListCardMain" className="shadow">
           <Card
             style={{ width: "18rem", height: "27rem" }}
             key={index}
-            className="mx-5 mt-5"
+            className="mx-5 mt-2 mb-5 shadow-lg"
           >
             <Card.Img
               variant="top"
               src={vinyl.image}
               style={{ height: "17rem" }}
+              className="shadow-5"
             />
-            <Card.Body id="cardListBody" className="pt-3 pb-2">
+            <Card.Body id="cardListBody" className="pt-3 pb-2 shadow-5">
               <Card.Title>{vinyl.artist}</Card.Title>
               <Card.Text>{vinyl.album}</Card.Text>
               <Button

@@ -34,7 +34,7 @@ const AllEvents = (props) => {
                     <Col>
                       <Card
                         style={{ width: "18rem", height: "16rem" }}
-                        className="mb-3"
+                        className="mb-3 shadow"
                         key={index}
                         id="eventCard"
                       >
