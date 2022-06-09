@@ -92,7 +92,7 @@ const VinylCarousel = (props) => {
         </div>
       )}
       {showEvents && (
-        <div id="carouselEvents" className="mt-5">
+        <div id="carouselEvents">
           <UpcomingEvents
             artist={activeVinyl.artist}
             setShowEvents={setShowEvents}

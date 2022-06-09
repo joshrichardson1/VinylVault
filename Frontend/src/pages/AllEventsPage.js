@@ -43,7 +43,7 @@ const AllEventsPage = (props) => {
  
   return (
     <div>
-      <h3 id="allEventsHeader" className="p-5">All Upcoming Events</h3>
+      <h3 id="allEventsHeader" className="p-5 mb-1">All Upcoming Events</h3>
       <AllEvents allEvents={allEvents} />
     </div>
     

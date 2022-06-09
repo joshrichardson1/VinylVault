@@ -20,25 +20,34 @@ const VinylList = (props) => {
   const getVinylsList = (vinyls) => {
     return vinyls.map((vinyl, index) => {
       return (
-        <Col xs={6} med={8} key={index}>
+        <Col key={index} id="vinylListCardMain">
           <Card
-            style={{ width: "27rem", height: "38rem" }}
+            style={{ width: "18rem", height: "27rem" }}
             key={index}
-            className="m-5"
+            className="mx-5 mt-5"
           >
-            <Card.Img variant="top" src={vinyl.image} style={{height: "25rem" }}/>
-            <Card.Body id="cardListBody" className="pt-4">
+            <Card.Img
+              variant="top"
+              src={vinyl.image}
+              style={{ height: "17rem" }}
+            />
+            <Card.Body id="cardListBody" className="pt-3 pb-2">
               <Card.Title>{vinyl.artist}</Card.Title>
               <Card.Text>{vinyl.album}</Card.Text>
               <Button
+                className="mb-2 mx-3"
                 variant="primary"
                 id={vinyl.discogs_id}
-                onClick={() => navigate(`/home/my-collection/${vinyl.artist}/${vinyl.album}/${vinyl.id}`)}
+                onClick={() =>
+                  navigate(
+                    `/home/my-collection/${vinyl.artist}/${vinyl.album}/${vinyl.id}`
+                  )
+                }
               >
                 Details
               </Button>
               <Button
-                className="m-2"
+                className="mx-3 mb-2"
                 variant="danger"
                 id={vinyl.id}
                 onClick={handleDelete}
@@ -53,7 +62,7 @@ const VinylList = (props) => {
   };
  
   return (
-    <div id="vinylListBody">
+    <div id="vinylListBody" className="">
       {!view &&
         <Container>
           <Row>
@@ -63,7 +72,7 @@ const VinylList = (props) => {
       }
       {view &&
         <Container className="p-5">
-          <Row>
+          <Row sm={2} md={3} lg={3} className="">
             {getVinylsList(vinyls)}
           </Row>
         </Container>

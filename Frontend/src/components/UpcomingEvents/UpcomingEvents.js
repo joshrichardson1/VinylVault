@@ -47,7 +47,6 @@ const UpcomingEvents = (props) => {
                 </Button>
               </h3>
           </div>
-          <hr />
           {events[0] && 
           <Container>
             <Row xs={1} md={2} lg={3} xl={4}>

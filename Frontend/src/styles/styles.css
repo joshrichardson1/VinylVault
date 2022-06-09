@@ -1,5 +1,5 @@
 #allEventsMain {
-      background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
+  background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
 }
 
 #allEventsHeader {
@@ -20,8 +20,9 @@
 }
 
 #cardListBody {
-  background-color: rgb(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.793);
   color: white;
+  padding-bottom: 10px;
 }
 
 #collectionHeader {
@@ -184,6 +185,4 @@
 
 #vinylDetailBody {
   background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
-  /* background-color: rgb(187, 184, 184); */
-
 }

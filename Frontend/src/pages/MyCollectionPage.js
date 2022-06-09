@@ -47,7 +47,7 @@ const MyCollectionPage = () => {
           <SearchForm vinyls={vinyls} setShowSearch={setShowSearch} />
         )}
       </div>
-      <VinylList vinyls={vinyls} view={toggleViewList} />
+        <VinylList vinyls={vinyls} view={toggleViewList} />
     </div>
   );
 }
