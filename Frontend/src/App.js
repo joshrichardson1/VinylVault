@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {useState} from 'react'
 
 // pages
-import VinylPage from './pages/VinylPage.js'
 import CreateAccountPage from './pages/CreateAccountPage';
 import LoginPage from './pages/LoginPage';
 import WelcomePage from './pages/WelcomePage'
@@ -28,7 +27,6 @@ const App = () => {
         <AppNav user={user} setUser={setUser}/> 
           <Routes>
           <Route path="/" element={<WelcomePage setUser={setUser}/>} />
-            <Route path="/vinyls/:vinylID/" element={<VinylPage user={user}/>} />
             <Route path="/create-account/" element={<CreateAccountPage />} />
             <Route path="/login/" element={<LoginPage setUser={setUser}/>} />
             <Route path="/home/my-collection/" element={<MyCollectionPage user={user} />} />

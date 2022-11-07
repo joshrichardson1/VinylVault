@@ -1,11 +1,10 @@
-import {React, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
-import LoginPage from './LoginPage'
+import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import LoginPage from "./LoginPage";
 
 const WelcomePage = () => {
-
-  const [showLogin, setShowLogin] = useState(false)
+  const [showLogin, setShowLogin] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -36,8 +35,6 @@ const WelcomePage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default WelcomePage;
-
-

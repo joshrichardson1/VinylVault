@@ -1,10 +1,17 @@
-import { React } from 'react'
-import VinylAPI from '../../api/VinylAPI';
+import { React } from "react";
+import VinylAPI from "../../api/VinylAPI";
 import { useParams, useNavigate } from "react-router-dom";
-import { Card, ListGroup, ListGroupItem, Button, Container, Col, Row } from 'react-bootstrap'
+import {
+  Card,
+  ListGroup,
+  ListGroupItem,
+  Button,
+  Container,
+  Col,
+  Row,
+} from "react-bootstrap";
 
 const DisplaySearch = (props) => {
-
   //  props and params
   const results = props.results;
   const { artist, album } = useParams();
@@ -25,7 +32,7 @@ const DisplaySearch = (props) => {
   const getResults = (results) => {
     return results.map((vinyl, index) => {
       const vinylData = {
-        "vinyls": [
+        vinyls: [
           {
             artist: titleCase(artist),
             album: titleCase(album),
@@ -35,16 +42,18 @@ const DisplaySearch = (props) => {
             discogs_id: vinyl.master_id,
             format: vinyl.format ? vinyl.format[0] : vinyl.format,
             label: vinyl.label ? vinyl.label[0] : vinyl.label,
-          }
-        ]
-      }
-       const handleAdd = async (event) => {
-         event.preventDefault();
-         const data = await VinylAPI.addVinyl(user.email, vinylData);
-         navigate("/home/my-collection/");
-       };
+          },
+        ],
+      };
+
+      const handleAdd = async (event) => {
+        event.preventDefault();
+        const data = await VinylAPI.addVinyl(user.email, vinylData);
+        navigate("/home/my-collection/");
+      };
+
       return (
-        <Col className="mb-3 mt-3">
+        <Col className="mb-3 mt-3 searchResults">
           <Card style={{ width: "18rem" }} key={index}>
             <Card.Img variant="top" src={vinyl.cover_image} />
             <Card.Body className="displaySearchCard">
@@ -74,20 +83,19 @@ const DisplaySearch = (props) => {
             </Card.Body>
           </Card>
         </Col>
-      );      
+      );
     });
   };
-      
+
   return (
     <div id="displaySearchMain">
       <Container>
-        <Row xs={3} med={2}>
+        <Row sm={1} md={3}>
           {getResults(results)}
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
 export default DisplaySearch;
-  

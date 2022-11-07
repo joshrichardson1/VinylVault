@@ -1,20 +1,19 @@
-import { Card, Button, Row, Col, Container } from 'react-bootstrap';
-import VinylAPI from '../../api/VinylAPI';
-import { useNavigate } from 'react-router-dom';
-import VinylCarousel from '../VinylCarousel/VinylCarousel';
+import { Card, Button, Row, Col, Container } from "react-bootstrap";
+import VinylAPI from "../../api/VinylAPI";
+import { useNavigate } from "react-router-dom";
+import VinylCarousel from "../VinylCarousel/VinylCarousel";
 import "../../styles/styles.css";
 
 const VinylList = (props) => {
-
   const { vinyls, view } = props;
   const navigate = useNavigate();
 
   // handles delete vinyl
   const handleDelete = async (event) => {
-      let vinylId = event.target.id;
-      await VinylAPI.deleteVinyl(vinylId);
-      window.location.reload();
-    };
+    let vinylId = event.target.id;
+    await VinylAPI.deleteVinyl(vinylId);
+    window.location.reload();
+  };
 
   // retrieves vinyl info and returns data in card
   const getVinylsList = (vinyls) => {
@@ -61,33 +60,25 @@ const VinylList = (props) => {
       );
     });
   };
- 
+
   return (
     <div id="vinylListBody" className="">
-      {!view &&
+      {!view && (
         <Container>
           <Row>
-            < VinylCarousel vinyls={vinyls} handleDelete={handleDelete} />
+            <VinylCarousel vinyls={vinyls} handleDelete={handleDelete} />
           </Row>
         </Container>
-      }
-      {view &&
-        <Container className="p-5">
+      )}
+      {view && (
+        <Container className="p-5 listContainer">
           <Row sm={2} md={3} lg={3} className="">
             {getVinylsList(vinyls)}
           </Row>
         </Container>
-      }
+      )}
     </div>
   );
-}
+};
 
-export default VinylList
-
-
-
-
-
-
-
- 
+export default VinylList;

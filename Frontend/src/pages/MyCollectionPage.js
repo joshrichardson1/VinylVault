@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
-import VinylAPI from "../api/VinylAPI"
+import VinylAPI from "../api/VinylAPI";
 import SearchForm from "../forms/SearchForm";
-import VinylList from "../components/VinylList/VinylList"
-import "../styles/styles.css"
+import VinylList from "../components/VinylList/VinylList";
+import "../styles/styles.css";
 
 const MyCollectionPage = () => {
-
   // states
   const [vinyls, setVinyls] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
@@ -38,7 +37,7 @@ const MyCollectionPage = () => {
         )}
         <Button
           variant="secondary"
-          className="m-2"
+          className="m-2 hideOnMobile"
           onClick={() => setToggleViewList(!toggleViewList)}
         >
           {toggleViewList ? "Toggle Slide View" : "Toggle List View"}
@@ -47,9 +46,9 @@ const MyCollectionPage = () => {
           <SearchForm vinyls={vinyls} setShowSearch={setShowSearch} />
         )}
       </div>
-        <VinylList vinyls={vinyls} view={toggleViewList} />
+      <VinylList vinyls={vinyls} view={toggleViewList} />
     </div>
   );
-}
+};
 
-export default MyCollectionPage
+export default MyCollectionPage;

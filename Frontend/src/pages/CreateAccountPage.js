@@ -1,10 +1,9 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Form, Button, Row, Col, Alert } from 'react-bootstrap'
-import VinylAPI from "../api/VinylAPI"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Form, Button, Row, Col, Alert } from "react-bootstrap";
+import VinylAPI from "../api/VinylAPI";
 
 const CreateAccountPage = () => {
-
   const navigate = useNavigate();
 
   const handleSumbit = async (event) => {
@@ -35,20 +34,30 @@ const CreateAccountPage = () => {
         <h3 id="createAccountHeader">
           Please fill out all fields to create an account
         </h3>
-        <Form onSubmit={handleSumbit}>
+        <Form id="newAccountForm" onSubmit={handleSumbit}>
           <Row className="mb-3">
-            <Form.Group as={Col} className="mb-3" controlId="firstName">
-              <Form.Label>First Name:</Form.Label>
+            <Form.Group
+              as={Col}
+              className="mb-3 accountFieldGroup"
+              controlId="firstName"
+            >
+              {/* <Form.Label>First Name:</Form.Label> */}
               <Form.Control
+                className="accountFormFields"
                 type="text"
                 placeholder="First name"
                 name="firstName"
                 required
               />
             </Form.Group>
-            <Form.Group as={Col} className="mb-3" controlId="lastName">
-              <Form.Label>Last Name:</Form.Label>
+            <Form.Group
+              as={Col}
+              className="mb-3 accountFieldGroup"
+              controlId="lastName"
+            >
+              {/* <Form.Label>Last Name:</Form.Label> */}
               <Form.Control
+                className="accountFormFields"
                 size="small"
                 type="text"
                 placeholder="Last name"
@@ -59,34 +68,41 @@ const CreateAccountPage = () => {
           </Row>
           <Row>
             <Form.Group
+              as={Col}
               size="small"
-              className="mb-3"
+              className="mb-3 accountFieldGroup"
               controlId="formBasicEmail"
             >
-              <Form.Label column lg={2}>
+              {/* <Form.Label column lg={2}>
                 Email address:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  className="col-sm"
-                  size="md"
-                  type="email"
-                  placeholder="Email address"
-                  name="email"
-                  required
-                />
-              </Col>
+              </Form.Label> */}
+              {/* <Col> */}
+              <Form.Control
+                className="accountFormFields"
+                size="small"
+                type="email"
+                placeholder="Email address"
+                name="email"
+                required
+              />
+              {/* </Col> */}
+            </Form.Group>
+            {/* </Row> */}
+            <Form.Group
+              as={Col}
+              className="mb-3 accountFieldGroup"
+              controlId="formBasicPassword"
+            >
+              {/* <Form.Label>Password:</Form.Label> */}
+              <Form.Control
+                className="accountFormFields"
+                type="password"
+                placeholder="Password"
+                name="password"
+                required
+              />
             </Form.Group>
           </Row>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password:</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              name="password"
-              required
-            />
-          </Form.Group>
           <Button
             variant="danger"
             onClick={() => navigate("/")}

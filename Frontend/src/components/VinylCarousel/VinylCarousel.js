@@ -1,10 +1,9 @@
-import React from 'react'
-import { useState } from 'react'
-import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
-import { Carousel, CarouselItem, Row, Col, Button } from 'react-bootstrap';
+import React from "react";
+import { useState } from "react";
+import UpcomingEvents from "../UpcomingEvents/UpcomingEvents";
+import { Carousel, CarouselItem, Row, Col, Button } from "react-bootstrap";
 
 const VinylCarousel = (props) => {
-
   // state
   const [activeVinyl, setActiveVinyl] = useState(props.vinyls[0]);
   const [showEvents, setShowEvents] = useState(false);
@@ -12,7 +11,7 @@ const VinylCarousel = (props) => {
   // sets active vinyl
   const handleSelect = (selectedVinyl) => {
     setActiveVinyl(props.vinyls[selectedVinyl]);
-  }
+  };
 
   return (
     <div id="carouselMain">
@@ -99,12 +98,9 @@ const VinylCarousel = (props) => {
           />
         </div>
       )}
-      <div className="p-5" id="noEventsCarousel">
-      </div>
+      <div className="p-5" id="noEventsCarousel"></div>
     </div>
   );
-}
+};
 
-export default VinylCarousel
-
-
+export default VinylCarousel;

@@ -1,11 +1,11 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Form, Button } from 'react-bootstrap'
-import VinylAPI from "../api/VinylAPI"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
+import VinylAPI from "../api/VinylAPI";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-    
+
   const handleSumbit = async (event) => {
     event.preventDefault();
     let userEmail = event.target.email.value;
@@ -25,7 +25,7 @@ const LoginPage = () => {
         <Form.Group className="mb-3">
           <Form.Control
             id="emalFormField"
-            style={{ width: "30rem" }}
+            className="loginField"
             type="email"
             placeholder="Enter email"
             name="email"
@@ -34,7 +34,8 @@ const LoginPage = () => {
         <Form.Group className="mb-3">
           <Form.Control
             id="pwFormFields"
-            style={{ width: "30rem" }}
+            className="loginField"
+            // style={{ width: "30rem" }}
             type="password"
             placeholder="Password"
             name="password"

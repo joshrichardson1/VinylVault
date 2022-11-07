@@ -53,95 +53,112 @@ const VinylDetailPage = () => {
       {isLoading ? (
         <Loading />
       ) : (
-      <div id="vinylDetailBody">
-        {!showEvents && (
-          <div className="pb-5">
-            <div id="detailHeader" className="p-4">
-              <h2 className="pt-3">
-                {vinylDetails.artist} - {vinylDetails.album}
-              </h2>
+        <div id="vinylDetailBody">
+          {!showEvents && (
+            <div className="pb-5">
+              <div id="detailHeader" className="p-4">
+                <h2 className="pt-3">
+                  {vinylDetails.artist} - {vinylDetails.album}
+                </h2>
+              </div>
+              <Container id="vinylDetails">
+                <div className="hideOnDesktop">
+                  <Button
+                    className="m-2"
+                    variant="primary"
+                    id={vinylDetails.id}
+                    onClick={() => navigate("/home/my-collection/")}
+                  >
+                    Back to Vinyls
+                  </Button>
+                  <Button
+                    className="m-2"
+                    variant="success"
+                    onClick={() => setShowEvents(true)}
+                  >
+                    Show Events
+                  </Button>
+                </div>
+                <Row>
+                  <Col xs={6} md={3} className="pt-5 detailContainer">
+                    <h2 className="p-2 mb-2">
+                      <u>Artist:</u>
+                    </h2>
+                    <p>
+                      <b>{vinylDetails.artist}</b>
+                    </p>
+                    <h2 className="p-2 mb-2">
+                      <u>Album:</u>
+                    </h2>
+                    <p>
+                      <b>{vinylDetails.album}</b>
+                    </p>
+                    <h2 className="p-2 mb-2">
+                      <u>Genre:</u>
+                    </h2>
+                    <p>
+                      <b>{vinylDetails.genre}</b>
+                    </p>
+                    <h2 className="p-2 mb-2">
+                      <u>Release Year:</u>
+                    </h2>
+                    <p>
+                      <b>{vinylDetails.year}</b>
+                    </p>
+                    <h2 className="p-2 mb-2">
+                      <u>Added On:</u>
+                    </h2>
+                    <p>
+                      <b>{vinylDetails.created_at}</b>
+                    </p>
+                  </Col>
+                  <Col xs={6} className="pt-3 hideOnMobile">
+                    <Card className="mt-4">
+                      <Card.Img
+                        variant="top"
+                        src={vinylDetails.image}
+                        height={500}
+                      />
+                      <Card.Text id="vinylDetailButtons">
+                        <Button
+                          className="m-2"
+                          variant="primary"
+                          id={vinylDetails.id}
+                          onClick={() => navigate("/home/my-collection/")}
+                        >
+                          Back to Vinyls
+                        </Button>
+                        <Button
+                          className="m-2"
+                          variant="success"
+                          onClick={() => setShowEvents(true)}
+                        >
+                          Show Events
+                        </Button>
+                      </Card.Text>
+                    </Card>
+                  </Col>
+                  <Col xs={6} md={3} className="">
+                    <h2 className="pt-4 mb-0" id="trackListHeader">
+                      Tracklist:{" "}
+                    </h2>
+                    {displayTracks()}
+                  </Col>
+                </Row>
+              </Container>
+              <br></br>
+              <br></br>
             </div>
-            <Container id="vinylDetails">
-              <Row>
-                <Col xs={3} className="pt-5">
-                  <h2 className="p-2 mb-2">
-                    <u>Artist:</u>
-                  </h2>
-                  <p>
-                    <b>{vinylDetails.artist}</b>
-                  </p>
-                  <h2 className="p-2 mb-2">
-                    <u>Album:</u>
-                  </h2>
-                  <p>
-                    <b>{vinylDetails.album}</b>
-                  </p>
-                  <h2 className="p-2 mb-2">
-                    <u>Genre:</u>
-                  </h2>
-                  <p>
-                    <b>{vinylDetails.genre}</b>
-                  </p>
-                  <h2 className="p-2 mb-2">
-                    <u>Release Year:</u>
-                  </h2>
-                  <p>
-                    <b>{vinylDetails.year}</b>
-                  </p>
-                  <h2 className="p-2 mb-2">
-                    <u>Added On:</u>
-                  </h2>
-                  <p>
-                    <b>{vinylDetails.created_at}</b>
-                  </p>
-                </Col>
-                <Col xs={6} className="pt-3">
-                  <Card className="mt-4">
-                    <Card.Img
-                      variant="top"
-                      src={vinylDetails.image}
-                      height={500}
-                    />
-                    <Card.Text id="vinylDetailButtons">
-                      <Button
-                        className="m-2"
-                        variant="primary"
-                        id={vinylDetails.id}
-                        onClick={() => navigate("/home/my-collection/")}
-                      >
-                        Back to Vinyls
-                      </Button>
-                      <Button
-                        className="m-2"
-                        variant="success"
-                        onClick={() => setShowEvents(true)}
-                      >
-                        Show Events
-                      </Button>
-                    </Card.Text>
-                  </Card>
-                </Col>
-                <Col xs={3} className="">
-                  <h2 className="pt-4 mb-0" id="trackListHeader">
-                    Tracklist:{" "}
-                  </h2>
-                  {displayTracks()}
-                </Col>
-              </Row>
-            </Container>
-            <br></br>
-            <br></br>
-          </div>
-        )}
-        {showEvents && (
-          <div id="eventDetailBody">
-            <UpcomingEvents
-              artist={vinylDetails.artist}
-              setShowEvents={setShowEvents}
-            />
-          </div>
-        )}
-          </div>
+          )}
+          {showEvents && (
+            <div id="eventDetailBody">
+              <UpcomingEvents
+                artist={vinylDetails.artist}
+                setShowEvents={setShowEvents}
+              />
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

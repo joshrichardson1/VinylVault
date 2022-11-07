@@ -1,3 +1,12 @@
+.accountFormFields {
+    width: 300px;
+}
+
+.accountFieldGroup {
+  display: flex;
+  justify-content: center;
+}
+
 #allEventsMain {
   background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
 }
@@ -128,6 +137,10 @@
   width: 100vw;
 }
 
+#newAccountForm {
+  padding-top: 20px;
+}
+
 #noTrackList {
   margin-left: 10%;
   margin-right: -10%;
@@ -181,8 +194,72 @@
 
 #vinylListBody {
   background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
+  background-attachment: fixed;
+
 }
 
 #vinylDetailBody {
   background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
 }
+
+@media screen and (max-width: 600px) {
+
+  .allEventsContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  #backToVinyls {
+    margin-top: 10px;
+  }
+
+  .detailContainer {
+    padding-top: 15px !important;
+  }
+
+  #eventListCards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+
+  #loginMenu, #loginForm {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .listContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  #noEventsImage {
+    height: 30vh;
+    margin-top: 20px;
+  }
+
+  #searchInfo {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .searchFields {
+    width: 160px;
+  }
+
+  .searchResults {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 601px)  {
+  .hideOnDesktop {
+    display: none;
+  }
+}
+  
