@@ -84,6 +84,7 @@
 
 #eventDetailBody {
   scroll-padding-top: 100px;
+  height: 100vh;
 }
 
 #eventPageHeader {
@@ -200,6 +201,7 @@
 
 #vinylDetailBody {
   background-image: url("https://ae01.alicdn.com/kf/HTB1ITHVj.1HTKJjSZFmq6xeYFXaC/Old-master-style-vinyl-cloth-music-notes-grey-wall-photography-backdrops-for-newborn-wedding-photo-studio.jpg_Q90.jpg_.webp");
+  height: 100vh;
 }
 
 @media screen and (max-width: 600px) {
